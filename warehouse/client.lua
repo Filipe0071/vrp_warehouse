@@ -18,10 +18,10 @@ Citizen.CreateThread(function()
                             SetEntityCoords(player, v.leave[1], v.leave[2], v.leave[3])
                         end
                     end
-                    threads = 0 
                 else
                     threads = 500
                 end
+                threads = 0
             end
             
             if inWarehouse then
