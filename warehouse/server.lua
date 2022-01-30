@@ -4,6 +4,17 @@ local Proxy <const> = module("lib/Proxy")
 local vRP <const> = Proxy.getInterface("vRP")
 local vRPclient <const> = Tunnel.getInterface("vRP", "warehouse")
 
+--[[ SQL
+CREATE TABLE `vrp_warehouse` (
+  `warehouse` int(11) NOT NULL,
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;  
+
+ALTER TABLE `vrp_warehouse`
+  ADD PRIMARY KEY (`warehouse`);
+COMMIT;
+]]--
+
 RegisterNetEvent("warehouse:checkWarehouse")
 AddEventHandler("warehouse:checkWarehouse", function(warehouse)
     local player = source
